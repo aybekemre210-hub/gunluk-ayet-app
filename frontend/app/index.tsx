@@ -97,7 +97,7 @@ export default function HomeScreen() {
       // Request permissions
       const { status } = await MediaLibrary.requestPermissionsAsync();
       if (status !== 'granted') {
-        Alert.alert('\u0130zin Gerekli', 'Duvar ka\u011f\u0131d\u0131n\u0131 kaydetmek i\u00e7in galeri izni gereklidir.');
+        Alert.alert('Izin Gerekli', 'Duvar kagidini kaydetmek icin galeri izni gereklidir.');
         return;
       }
 
@@ -109,23 +109,23 @@ export default function HomeScreen() {
           const asset = await MediaLibrary.createAssetAsync(uri);
           
           // Create album if needed
-          const album = await MediaLibrary.getAlbumAsync('G\u00fcnl\u00fck Ayet');
+          const album = await MediaLibrary.getAlbumAsync('Gunluk Ayet');
           if (album) {
             await MediaLibrary.addAssetsToAlbumAsync([asset], album, false);
           } else {
-            await MediaLibrary.createAlbumAsync('G\u00fcnl\u00fck Ayet', asset, false);
+            await MediaLibrary.createAlbumAsync('Gunluk Ayet', asset, false);
           }
           
           Alert.alert(
-            'Ba\u015far\u0131l\u0131!',
-            'Duvar ka\u011f\u0131d\u0131 galeriye kaydedildi. Ayarlar > Duvar Ka\u011f\u0131d\u0131 b\u00f6l\u00fcm\u00fcnden uygulayabilirsiniz.',
+            'Basarili!',
+            'Duvar kagidi galeriye kaydedildi. Ayarlar > Duvar Kagidi bolumunden uygulayabilirsiniz.',
             [{ text: 'Tamam' }]
           );
         }
       }
     } catch (error) {
       console.error('Error saving wallpaper:', error);
-      Alert.alert('Hata', 'Duvar ka\u011f\u0131d\u0131 kaydedilirken bir hata olu\u015ftu.');
+      Alert.alert('Hata', 'Duvar kagidi kaydedilirken bir hata olustu.');
     } finally {
       setIsSaving(false);
     }
@@ -156,37 +156,37 @@ export default function HomeScreen() {
             <Ionicons name="moon" size={80} color="#ffd700" />
           </View>
           
-          <Text style={styles.setupTitle}>G\u00fcnl\u00fck Ayet</Text>
-          <Text style={styles.setupSubtitle}>Her g\u00fcn yeni bir ayet, kalbinize huzur</Text>
+          <Text style={styles.setupTitle}>Gunluk Ayet</Text>
+          <Text style={styles.setupSubtitle}>Her gun yeni bir ayet, kalbinize huzur</Text>
           
           <View style={styles.featureList}>
             <View style={styles.featureItem}>
               <Ionicons name="checkmark-circle" size={24} color="#4ade80" />
-              <Text style={styles.featureText}>Her g\u00fcn rastgele bir ayet</Text>
+              <Text style={styles.featureText}>Her gun rastgele bir ayet</Text>
             </View>
             <View style={styles.featureItem}>
               <Ionicons name="checkmark-circle" size={24} color="#4ade80" />
-              <Text style={styles.featureText}>Arap\u00e7a metin ve T\u00fcrk\u00e7e meal</Text>
+              <Text style={styles.featureText}>Arapca metin ve Turkce meal</Text>
             </View>
             <View style={styles.featureItem}>
               <Ionicons name="checkmark-circle" size={24} color="#4ade80" />
-              <Text style={styles.featureText}>G\u00fczel do\u011fa foto\u011fraflar\u0131</Text>
+              <Text style={styles.featureText}>Guzel doga fotograflari</Text>
             </View>
             <View style={styles.featureItem}>
               <Ionicons name="checkmark-circle" size={24} color="#4ade80" />
-              <Text style={styles.featureText}>Duvar ka\u011f\u0131d\u0131 olarak kaydet</Text>
+              <Text style={styles.featureText}>Duvar kagidi olarak kaydet</Text>
             </View>
           </View>
           
           <View style={styles.infoBox}>
             <Ionicons name="information-circle" size={24} color="#60a5fa" />
             <Text style={styles.infoText}>
-              Ayet her gece 00:00'da otomatik de\u011fi\u015fir. Duvar ka\u011f\u0131d\u0131 olarak kaydetmek i\u00e7in galeriye eri\u015fim izni gerekir.
+              Ayet her gece 00:00'da otomatik degisir. Duvar kagidi olarak kaydetmek icin galeriye erisim izni gerekir.
             </Text>
           </View>
           
           <TouchableOpacity style={styles.startButton} onPress={completeSetup}>
-            <Text style={styles.startButtonText}>Ba\u015fla</Text>
+            <Text style={styles.startButtonText}>Basla</Text>
             <Ionicons name="arrow-forward" size={24} color="#1a1a2e" />
           </TouchableOpacity>
         </View>
@@ -199,7 +199,7 @@ export default function HomeScreen() {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="#ffd700" />
-        <Text style={styles.loadingText}>G\u00fcn\u00fcn ayeti y\u00fckleniyor...</Text>
+        <Text style={styles.loadingText}>Gunun ayeti yukleniyor...</Text>
       </View>
     );
   }
@@ -264,7 +264,7 @@ export default function HomeScreen() {
             ) : (
               <>
                 <Ionicons name="download" size={24} color="#1a1a2e" />
-                <Text style={styles.saveButtonText}>Duvar Ka\u011f\u0131d\u0131 Kaydet</Text>
+                <Text style={styles.saveButtonText}>Duvar Kagidi Kaydet</Text>
               </>
             )}
           </TouchableOpacity>
