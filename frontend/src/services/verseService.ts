@@ -1,9 +1,6 @@
 import { storage } from '../utils/storage';
 import { NATURE_PHOTOS } from '../data/photos';
 
-// Import all 6236 verses
-import versesData from '../data/verses.json';
-
 // Verse type definition
 export interface Verse {
   id: number;
@@ -15,8 +12,8 @@ export interface Verse {
   turkish: string;
 }
 
-// Cast imported data to Verse array
-const ALL_VERSES: Verse[] = versesData as Verse[];
+// Load all 6236 verses from JSON file
+const ALL_VERSES: Verse[] = require('../data/verses.json');
 
 class VerseService {
   private verses: Verse[] = ALL_VERSES;
