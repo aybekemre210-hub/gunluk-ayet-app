@@ -27,7 +27,7 @@
         "android.permission.ACCESS_MEDIA_LOCATION"
       ],
       "package": "com.gunlukayet.app",
-      "versionCode": 2
+      "versionCode": 101
     },
     "web": {
       "bundler": "metro",
