@@ -1,0 +1,1 @@
+# gunluk-ayet-app
