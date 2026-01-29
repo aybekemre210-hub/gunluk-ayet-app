@@ -52,6 +52,11 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+# Health check endpoint at root (for deployment)
+@app.get("/")
+async def health_check():
+    return {"status": "healthy", "app": "Gunluk Ayet API"}
+
 # Include the router in the main app
 app.include_router(api_router)
 
