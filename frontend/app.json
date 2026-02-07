@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "Günlük Ayet",
+    "name": "Gunluk Ayet",
     "slug": "gunluk-ayet",
     "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "gunluk-ayet",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "Duvar kağıdı görseli kaydetmek için",
-        "NSPhotoLibraryAddUsageDescription": "Duvar kağıdını galeriye kaydetmek için"
+        "NSPhotoLibraryUsageDescription": "Duvar kagidi gorseli kaydetmek icin",
+        "NSPhotoLibraryAddUsageDescription": "Duvar kagidini galeriye kaydetmek icin"
       }
     },
     "android": {
@@ -20,14 +20,13 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#1a1a2e"
       },
-      "edgeToEdgeEnabled": true,
       "permissions": [
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE",
         "android.permission.ACCESS_MEDIA_LOCATION"
       ],
       "package": "com.gunlukayet.app",
-      "versionCode": 101
+      "versionCode": 135
     },
     "web": {
       "bundler": "metro",
@@ -48,8 +47,8 @@
       [
         "expo-media-library",
         {
-          "photosPermission": "Duvar kağıdını galeriye kaydetmek için izin gerekli.",
-          "savePhotosPermission": "Duvar kağıdını kaydetmek için izin gerekli."
+          "photosPermission": "Duvar kagidini galeriye kaydetmek icin izin gerekli.",
+          "savePhotosPermission": "Duvar kagidini kaydetmek icin izin gerekli."
         }
       ]
     ],
